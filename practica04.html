@@ -29,17 +29,18 @@
         const url = "https://picsum.photos/id/"
         const size = "/200/200"
         const Picture = (parametros) => {
-            let src = url + parametros + size
+            let src = url + parametros.id + size
             console.log(src)
             return `
                 <figure>
                     <img src="${src}">
-                    <figcaption></figcaption>
+                    <figcaption>${parametros.nombre}</figcaption>
                 </figure>
             `
         }
-        app.innerHTML = Picture("10");
-        app.innerHTML += Picture("21")
+        app.innerHTML = Picture({id:"1",nombre:"Jhon"})
+        app.innerHTML += Picture({id:"2",nombre:"Jane"})
+        
     </script>
     
 </body>
