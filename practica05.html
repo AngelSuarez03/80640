@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practica04</title>
+    <title>Practica05</title>
     <style>
         img {
             box-shadow: 5px 10px 20px red;
+            border-radius: 10% 40% 30%;
         }
 
         figure {
@@ -18,28 +19,44 @@
         body {
             justify-content: center;
         }
+
+        img.redonda {
+            border-radius: 50%;
+        }
     </style>
 </head>
 <body>
     <h1>Random Picture</h1>
     <div id="app"></div>
-
     <script>
         const app = document.getElementById("app")
         const url = "https://picsum.photos/id/"
         const size = "/200/200"
         const Picture = (parametros) => {
-            let src = url + parametros + size
+            let src = url + parametros.id + size
             console.log(src)
             return `
                 <figure>
                     <img src="${src}">
-                    <figcaption></figcaption>
+                    <figcaption>${parametros.nombre}</figcaption>
                 </figure>
             `
         }
-        app.innerHTML = Picture("10");
-        app.innerHTML += Picture("21")
+
+        app.innerHTML = Picture({id:"1",nombre:"Jhon"})
+        app.innerHTML += Picture({id:"2",nombre:"Jane"})
+        app.innerHTML += Picture({id:"3", nombre:"Joane"})
+
+        const lista = document.querySelectorAll("img")
+
+        for (let i = 0; i < lista.length; i++) {
+            lista[i].addEventListener("click", () => {
+                // lista[i].style.borderRadius = "50%" 
+                lista[i].classList.toggle("redonda")
+            });
+            
+        }
+
     </script>
     
 </body>
