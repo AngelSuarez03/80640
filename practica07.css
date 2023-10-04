@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+  form {
+    box-shadow: 10px 20px 20px;
+    width: 400px;
+    margin: auto;
+    padding: 25px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+  }
+  label {
+    display: block;
+  }
+  input {
+    margin-bottom: 15px;
+    width: 95%;
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+  }
+  input[type="submit"] {
+    background-color: blue;
+    color: white;
+    margin-left: 9px;
+  }
+  h1 {
+    text-align: center;
+  }
+  fieldset {
+    margin-bottom: 5%;
+    border: 2px groove;
+  }
