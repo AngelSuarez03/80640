@@ -9,7 +9,8 @@ function Formulario(props) {
 
     const hacerPeticion = async () => {
         try {
-            const res = await axios.get('http://localhost:4567/ruta3')
+            const res = await axios.post('http://localhost:4567/ruta2', datosFormulario)
+            const res2 = await axios.get('http://localhost:4567/ruta2', {params: datosFormulario})
             console.log(res.data)
             return res.data
         } catch (error) {
@@ -22,7 +23,7 @@ function Formulario(props) {
         setDatosFormulario({
             ...datosFormulario, [name]: value
         })
-        console.log(name, value)
+        // console.log(name, value)
 
     }
 
